@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Divider from "../components/Divider";
 import FeedList from "../components/FeedList";
 import TweetBox from "../components/TweetBox";
-import db from "../firebase";
+import db from "../firebase"
 import { PopulerIcon } from "../icons/Icon";
 
 const Content = () => {
@@ -24,7 +24,7 @@ const Content = () => {
       </header>
       <div className="flex space-x-4 px-4 py-3">
         <img
-          src="https://pbs.twimg.com/profile_images/1495171875433033732/dzZKKn_I_400x400.jpg"
+          src="https://pbs.twimg.com/profile_images/1495171875433033732/dzZKKn_I_400x400.jpg "
           alt="Profile"
           className="w-11 h-11 rounded-full"
         />
