@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import twitterLogo from "../images/twitter.svg";
 import {
   HomeIcon,
@@ -11,6 +11,8 @@ import {
   MoreIcon,
 } from "../Icon";
 import SideLink from "../components/SideLink";
+import { act } from "react-dom/test-utils";
+import UserBox from "../components/UserBox";
 
 const sideLinks = [
   {
@@ -48,6 +50,12 @@ const sideLinks = [
 ];
 
 const Sidebar = () => {
+  const [active, setActive] = useState("Home");
+
+  const handleMenuItemClick = (name) => {
+    setActive(name);
+  }
+
   return (
     <div className='flex flex-col justify-between w-72 px-2'>
       <div>
@@ -57,7 +65,13 @@ const Sidebar = () => {
         <nav className='mb-4'>
           <ul>
             {sideLinks.map(({ name, icon }) => (
-              <SideLink key={name} name={name} Icon={icon} />
+              <SideLink
+                key={name}
+                name={name}
+                Icon={icon}
+                active={active}
+                onMenuItemClick={handleMenuItemClick}
+              />
             ))}
           </ul>
         </nav>
@@ -66,7 +80,7 @@ const Sidebar = () => {
         </button>
       </div>
 
-      <div>Alt</div>
+      <UserBox></UserBox>
     </div>
   );
 };
