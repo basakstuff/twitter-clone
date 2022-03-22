@@ -10,6 +10,42 @@ import {
   ProfileIcon,
   MoreIcon,
 } from "../Icon";
+import SideLink from "../components/SideLink";
+
+const sideLinks = [
+  {
+    name: "Home",
+    icon: HomeIcon,
+  },
+  {
+    name: "Explore",
+    icon: ExploreIcon,
+  },
+  {
+    name: "Notifications",
+    icon: NotificationsIcon,
+  },
+  {
+    name: "Messages",
+    icon: MessagesIcon,
+  },
+  {
+    name: "Bookmarks",
+    icon: BookmarksIcon,
+  },
+  {
+    name: "Lists",
+    icon: ListsIcon,
+  },
+  {
+    name: "Profile",
+    icon: ProfileIcon,
+  },
+  {
+    name: "More",
+    icon: MoreIcon,
+  },
+];
 
 const Sidebar = () => {
   return (
@@ -20,8 +56,9 @@ const Sidebar = () => {
         </div>
         <nav className='mb-4'>
           <ul>
-            <li>Home</li>
-            <li>Explore</li>
+            {sideLinks.map(({ name, icon }) => (
+              <SideLink key={name} name={name} Icon={icon} />
+            ))}
           </ul>
         </nav>
         <button className='bg-primary-base hover:bg-primary-dark text-white shadow-lg rounded-full py-3 px-8 w-11/12 transfrom transition-colors duration-200'>
