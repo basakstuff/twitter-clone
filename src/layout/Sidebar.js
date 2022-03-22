@@ -9,7 +9,7 @@ import {
   ListsIcon,
   ProfileIcon,
   MoreIcon,
-} from "../Icon";
+} from "../icons/Icon";
 import SideLink from "../components/SideLink";
 import { act } from "react-dom/test-utils";
 import UserBox from "../components/UserBox";
